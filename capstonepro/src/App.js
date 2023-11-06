@@ -20,13 +20,15 @@ function App() {
 
      
       <Routes>
-
-          <Route path="/c" element={Chicago}/>
+          <Route path="/c" element={<Chicago/>}/>
       </Routes>
+
+
       <Header></Header>
       <Hero></Hero>
       <Specials></Specials>
       <CustomersSay></CustomersSay>
+      <Chicago></Chicago>
       <Footer></Footer>
     </>
   );
