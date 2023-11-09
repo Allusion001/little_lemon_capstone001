@@ -1,0 +1,33 @@
+.Specials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.Cards_Specials{
+    display: flex;
+    justify-content: center;
+    gap:40px;
+}
+
+.header_Specials button{
+    background-color: #F4CE14;
+    padding:3px 10px 3px 10px;
+    width:200px;
+    height:60px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+
+.header_Specials{
+
+    display:flex;
+    justify-content: space-around;
+    gap:300px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}

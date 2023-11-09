@@ -27,9 +27,7 @@ function App() {
       <Header></Header>
       <Hero></Hero>
       <Specials></Specials>
-      <CustomersSay></CustomersSay>
-      <Chicago></Chicago>
-      <Footer></Footer>
+     
     </>
   );
 }

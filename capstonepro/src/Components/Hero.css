@@ -5,6 +5,7 @@
     width:100%;
     height: 406px;
     justify-content: center;
+    gap:100px;
 }
 
 .imgArea{
@@ -14,8 +15,18 @@
 
 
 .TextArea{
-    width:422px;
-   
+    width:322px;
+    display:flex;
+    flex-direction: column;
+    gap:100px;
+    
+}
+
+.TextArea button{
+    width:200px;
+    border: none;
+    border-radius: 5px;
+
 }
 
 .flip {

@@ -1,0 +1,24 @@
+.Cards{
+    height:439px;
+    width:300px;
+    overflow: hidden;
+    background-color: #EDEFEE;
+}
+
+.price_Section{
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+
+.card_heading{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card_heading:nth-child(2){
+    height:240px;
+}
