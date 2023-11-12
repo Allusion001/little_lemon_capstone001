@@ -1,0 +1,30 @@
+.BookingForm{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    padding:50px;
+}
+
+.BookingForm img{
+    margin:auto;
+    padding:10px;
+}
+
+.BookingForm input,.BookingForm Select{
+    border-radius: 5px;
+    height:30px;
+    border:1px solid black;
+}
+
+input[type="submit"]{
+    background-color: #F4CE14;
+    padding:"20px";
+    width:200px;
+    margin:auto;
+}
+
+.form{
+    flex-direction: column;
+    width: 1000px;
+
+}

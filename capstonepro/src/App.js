@@ -1,14 +1,26 @@
-import Header from "./Components/Header.js"
-import Hero from "./Components/Hero.js"
-import Footer from "./Components/Footer.js"
-import Specials from "./Components/Specials.js"
-import CustomersSay from "./Components/CustomersSay.js"
 import { Helmet } from 'react-helmet';
+import React, { useReducer, useState } from 'react'
 import './App.css';
-import Chicago from "./Components/Chicago.js"
-import { Router,Route,Routes } from 'react-router-dom'
+import HomePage from "./Components/HomePage.js"
+import { Route,Routes } from 'react-router-dom'
+import BookingPage from "./Components/BookingPage.js"
 
 function App() {
+
+  const availableTimes=["17:00",'18:00','19:00','20:00','21:00','22:00'];
+
+
+  const reducer=(state,action)=>{
+      return(state);
+  }
+
+  const updateTimes=()=>{
+      dispatch({type:"testing"});
+  }
+
+  const [state,dispatch]=useReducer(reducer,availableTimes);
+  
+
   return (
     <>
       <Helmet>
@@ -18,15 +30,14 @@ function App() {
         <meta name="og:image" content="./greek_salad.jpg"/>
       </Helmet>
 
-     
+      
       <Routes>
-          <Route path="/c" element={<Chicago/>}/>
+           <Route path="/" element={<HomePage/>}/>
+          <Route path="/form" exact element={<BookingPage AvailableTimes={availableTimes} updateTimes={updateTimes}/>}/>
       </Routes>
 
 
-      <Header></Header>
-      <Hero></Hero>
-      <Specials></Specials>
+      
      
     </>
   );

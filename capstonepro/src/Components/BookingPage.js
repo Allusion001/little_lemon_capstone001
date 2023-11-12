@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Header from './Header'
+import BookingForm from './BookingForm.js'
 
-function BookingPage() {
+
+
+function BookingPage({AvailableTimes,updateTimes}) {
   return (
-    <div>BookingPage</div>
+    <>
+    <Header/>
+    <BookingForm AvailableTimes={AvailableTimes} updateTimes={updateTimes}/>
+    </>
   )
 }
 
