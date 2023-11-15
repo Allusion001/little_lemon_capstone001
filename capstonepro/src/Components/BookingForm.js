@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import "./BookingForm.css";
 import logo from "../Logo .svg"
+import { submitAPI } from '../API';
 
-function BookingForm({AvailableTimes,updateTimes}) {
-
-  const AvailableTime=AvailableTimes;
-
+function BookingForm({AvailableTimes,updateTimes,submitHandler}) {
   const [inputDate,setInputDate]=useState('01/01/2023');
   const [inputTime,setInputTime]=useState('17:00');
   const [inputGuests,setInputGuests]=useState(1);
@@ -28,15 +26,25 @@ function BookingForm({AvailableTimes,updateTimes}) {
     setInputOccasion(e.target.value)
   }
 
+  const submissionHandler=(e)=>{
+        e.preventDefault();
+        submitHandler([inputDate,inputTime,inputGuests,inputOccasion]);
+  }
+
   return (
+
     <div className="BookingForm">
-        <form className='form' style={{display:'flex', maxWidth:'500px',gap:'20px'}}>
+        <form className='form' onSubmit={submissionHandler} style={{display:'flex', maxWidth:'500px',gap:'20px'}}>
              <img src={logo} height="60px" width="200px"/>
              <label htmlFor="res-date">Choose date</label>
             <input type="date" id="res-date" value={inputDate} onChange={handleDateChange}/>
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time " value={inputTime} onChange={handleTimeChange}>
-                {AvailableTime.map(opt=>{return(<option >{opt}</option>)})}
+                {AvailableTimes && AvailableTimes['afternoon'].map(option1=><option key={option1}>{option1}</option>)}
+                {AvailableTimes && AvailableTimes['evening'].map(option1=><option key={option1}>{option1}</option>)}
+                {AvailableTimes && AvailableTimes['morning'].map(option1=><option key={option1}>{option1}</option>)}
+     
+     
             </select>
             <label htmlFor="guests">Number of guests</label>
             <input type="number" placeholder="1" min="1" max="10" id="guests" value={inputGuests} onChange={handleGuestsChange}/>
@@ -45,7 +53,7 @@ function BookingForm({AvailableTimes,updateTimes}) {
                 <option>Birthday</option>
                 <option>Anniversary</option>
             </select>
-            <input type="submit" value="Make Your reservation" />
+            <input type="submit"  value="Make Your reservation" />
         </form>
     </div>
   )

@@ -4,11 +4,11 @@ import BookingForm from './BookingForm.js'
 
 
 
-function BookingPage({AvailableTimes,updateTimes}) {
+function BookingPage({AvailableTimes,updateTimes,submitHandler}) {
   return (
     <>
     <Header/>
-    <BookingForm AvailableTimes={AvailableTimes} updateTimes={updateTimes}/>
+    <BookingForm AvailableTimes={AvailableTimes} updateTimes={updateTimes} submitHandler={submitHandler}/>
     </>
   )
 }

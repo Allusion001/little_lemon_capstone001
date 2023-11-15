@@ -5,6 +5,6 @@ import BookingPage from './Components/BookingPage';
 
 test('renders learn react link', () => {
   render(<BookingForm/>);
-  const linkElement = screen.getByText('Occasion');
+  const linkElement = screen.
   expect(linkElement).toBeInTheDocument();
 });
