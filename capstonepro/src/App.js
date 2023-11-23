@@ -10,6 +10,7 @@ import ConfirmedBooking from './ConfirmedBooking';
 
 function App() {
   let newDate = new Date();
+  
   const availableTimes=fetchAPI(newDate)
 
    
@@ -26,7 +27,7 @@ function App() {
       localStorage.setItem("Time",JSON.stringify(data[1]));
       localStorage.setItem("Guests",JSON.stringify(data[2]));
       localStorage.setItem("Occasions",JSON.stringify(data[3]));
-
+ 
       if(submitAPI(data)){
 
            navigate("/confirmation")}
@@ -36,6 +37,11 @@ function App() {
 
   const updateTimes=()=>{
       dispatch({type:"testing"});
+  }
+
+  const disCondition=()=>{
+      
+
   }
 
   const [state,dispatch]=useReducer(reducer,availableTimes);
@@ -54,7 +60,7 @@ function App() {
       
       <Routes>
            <Route path="/" element={<HomePage/>}/>
-          <Route path="/form" exact element={<BookingPage AvailableTimes={availableTimes} updateTimes={updateTimes} submitHandler={submitHandler}/>}/>
+          <Route path="/form" exact element={<BookingPage AvailableTimes={availableTimes} updateTimes={updateTimes} submitHandler={submitHandler} disCondition={disCondition}/>}/>
           <Route path="/confirmation" exact element={<ConfirmedBooking/>}/>
       </Routes>
 

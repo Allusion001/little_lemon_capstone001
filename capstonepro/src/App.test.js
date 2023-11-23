@@ -4,7 +4,7 @@ import BookingForm from './Components/BookingForm';
 import BookingPage from './Components/BookingPage';
 
 test('renders learn react link', () => {
-  render(<BookingForm/>);
-  const linkElement = screen.
+  render(<App/>);
+  const linkElement = screen.get
   expect(linkElement).toBeInTheDocument();
 });
