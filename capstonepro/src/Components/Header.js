@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="Header">
     <img src={logo}/>
-    <Nav/>
+    <Nav highlight={"home"}/>
     </div>
   )
 }

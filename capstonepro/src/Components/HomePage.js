@@ -6,7 +6,7 @@ import Specials from "./Specials.js"
 function HomePage() {
   return (
     <div>
-      <Header></Header>
+      <Header highlight=""></Header>
       <Hero></Hero>
       <Specials></Specials>
     </div>

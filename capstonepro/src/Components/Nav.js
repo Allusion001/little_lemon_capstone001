@@ -1,11 +1,12 @@
 import React from 'react';
 import "./Nav.css"
 import { Link } from 'react-router-dom'
-function Nav() {
+function Nav({highlight}) {
+  const style={fontWight:"bold"}
   return (
     <>
         <ul className='navigation'>
-            <li><Link to="/">Home</Link></li>
+            <li ><Link to="/">Home</Link></li>
 
             <li><Link to="/">About</Link></li>
             <li><Link to="/">Menu</Link></li>

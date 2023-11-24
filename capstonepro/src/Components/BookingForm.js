@@ -43,7 +43,7 @@ function BookingForm({AvailableTimes,updateTimes,submitHandler,disCondition}) {
                 
                 
                 validationSchema={Yup.object({
-                    date:Yup.date().required("req"),
+                    date:Yup.string().required("req"),
                     guests:Yup.number().required("Enter guests"),
                     tee:Yup.string().required("Required")
                 })}
@@ -74,7 +74,9 @@ function BookingForm({AvailableTimes,updateTimes,submitHandler,disCondition}) {
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </select>
-           
+                <label htmlFor="tee">inside/Outside</label>
+                <Field name="tee" type="text"/>
+                <ErrorMessage name="tee"/>
                 <input type="submit" disabled={ !dirty} value="Make Your reservation" />
             </Form>)}
 
